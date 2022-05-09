@@ -174,7 +174,6 @@ jobs:
           CONFIG_PACKAGE_libxtables=y
           CONFIG_PACKAGE_luci-app-firewall=y
           CONFIG_PACKAGE_luci-i18n-firewall-zh-cn=y
-          CONFIG_PACKAGE_luci-i18n-nlbwmon-zh-cn=y
           CONFIG_PACKAGE_nlbwmon=y
           CONFIG_PACKAGE_luci-app-nlbwmon=y
           CONFIG_PACKAGE_luci-i18n-nlbwmon-zh-cn=y
