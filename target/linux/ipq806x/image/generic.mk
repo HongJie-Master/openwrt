@@ -163,6 +163,7 @@ define Device/linksys_ea7500-v1
 	IMAGE/factory.bin := append-kernel | pad-to $$$$(KERNEL_SIZE) | \
 		append-ubi | pad-to $$$$(PAGESIZE)
 	DEVICE_PACKAGES := ath10k-firmware-qca99x0-ct
+	DEFAULT := n
 endef
 TARGET_DEVICES += linksys_ea7500-v1
 
@@ -184,6 +185,7 @@ define Device/linksys_ea8500
 	IMAGE/factory.bin := append-kernel | pad-to $$$$(KERNEL_SIZE) | \
 		append-ubi
 	DEVICE_PACKAGES := ath10k-firmware-qca99x0-ct
+	DEFAULT := n
 endef
 TARGET_DEVICES += linksys_ea8500
 
@@ -247,7 +249,7 @@ define Device/nec_wg2600hp3
 	DEVICE_PACKAGES := -kmod-ata-ahci -kmod-ata-ahci-platform \
 		-kmod-usb-ohci -kmod-usb2 -kmod-usb-ledtrig-usbport \
 		-kmod-usb-phy-qcom-dwc3 -kmod-usb3 -kmod-usb-dwc3-qcom \
-		ath10k-firmware-qca9984-ct ipq-wifi-nec_wg2600hp3
+		ath10k-firmware-qca9984-ct
 endef
 TARGET_DEVICES += nec_wg2600hp3
 

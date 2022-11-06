@@ -9,9 +9,9 @@ PKG_RELEASE:=$(AUTORELEASE)
 
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_URL=$(PROJECT_GIT)/project/firewall4.git
-PKG_SOURCE_DATE:=2022-04-21
-PKG_SOURCE_VERSION:=fc83d462621476be3b2861a93ac3a641e3f717c8
-PKG_MIRROR_HASH:=ca0438e04951d2c2ed58ccfca4f4a5b74f7ae96fa5560e98f8d8c5e9d083f451
+PKG_SOURCE_DATE:=2022-10-18
+PKG_SOURCE_VERSION:=7ae5e14bbd7265cc67ec870c3bb0c8e197bb7ca9
+PKG_MIRROR_HASH:=ce190e526df915df65b40aa24fadf2a1b5badc57ab4e564d5f44575b11d18e26
 PKG_MAINTAINER:=Jo-Philipp Wich <jo@mein.io>
 PKG_LICENSE:=ISC
 
@@ -23,7 +23,7 @@ define Package/firewall4
   TITLE:=OpenWrt 4th gen firewall
   DEPENDS:= \
 	+kmod-nft-core +kmod-nft-fib +kmod-nft-offload \
-	+kmod-nft-nat +kmod-nft-nat6 \
+	+kmod-nft-nat \
 	+nftables-json \
 	+ucode +ucode-mod-fs +ucode-mod-ubus +ucode-mod-uci
   EXTRA_DEPENDS:=ucode (>= 2022-03-22)

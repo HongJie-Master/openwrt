@@ -25,7 +25,8 @@ Once this is done. Retry.
 EOF
 		return 1
 		;;
-	zte,mf286d)
+	zte,mf286d |\
+	zte,mf289f)
 		CI_UBIPART="rootfs"
 		local mtdnum="$( find_mtd_index $CI_UBIPART )"
 		[ ! "$mtdnum" ] && return 1
@@ -161,17 +162,21 @@ platform_do_upgrade() {
 		;;
 	linksys,ea6350v3 |\
 	linksys,ea8300 |\
-	linksys,mr8300)
+	linksys,mr8300 |\
+	linksys,whw01-v1)
 		platform_do_upgrade_linksys "$1"
 		;;
-	meraki,mr33)
+	meraki,mr33 |\
+	meraki,mr74)
 		CI_KERNPART="part.safe"
 		nand_do_upgrade "$1"
 		;;
 	mikrotik,cap-ac|\
 	mikrotik,hap-ac2|\
+	mikrotik,hap-ac3-lte6-kit|\
 	mikrotik,lhgg-60ad|\
-	mikrotik,sxtsq-5-ac)
+	mikrotik,sxtsq-5-ac|\
+	mikrotik,wap-ac)
 		[ "$(rootfs_type)" = "tmpfs" ] && mtd erase firmware
 		default_do_upgrade "$1"
 		;;
@@ -191,8 +196,12 @@ platform_do_upgrade() {
 		PART_NAME="inactive"
 		platform_do_upgrade_dualboot_datachk "$1"
 		;;
+	sony,ncp-hg100-cellular)
+		sony_emmc_do_upgrade "$1"
+		;;
 	teltonika,rutx10 |\
-	zte,mf286d)
+	zte,mf286d |\
+	zte,mf289f)
 		CI_UBIPART="rootfs"
 		nand_do_upgrade "$1"
 		;;
